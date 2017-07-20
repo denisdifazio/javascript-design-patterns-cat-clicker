@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="cat-list" class="main-list">
+    </div>
+
+    <div id="cat-display" class="main-display">
+        <div class="name">
+            <h1 id="cat-name"></h1>
+        </div>
+        <div class="image">
+            <img id="cat-image" src="" alt="">
+        </div>
+        <div class="counter">
+            <h1 id="cat-counter"></h1>
+        </div>
+    </div>
+
+    <div id="admin-collumn">
+        <button type="" id="admin-button" class="button">Admin</button>
+        <div id="admin-panel">
+            <form id="admin-form" class="admin-form">
+                Name: <input type="text" id="admin-name-input" class="name-input">
+                <br> Image: <input type="text" id="admin-image-input" class="image-input">
+                <br> Clicks: <input type="text" id="admin-clicks-input" class="clicks-input">
+            </form>
+            <button type="" id="admin-cancel-button" class="button">Cancel</button>
+            <button type="" id="admin-save-button" class="button">Save</button>
+        </div>
+    </div>
+
+    <script src="js/cat.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/views/catlist.js"></script>
+    <script src="js/views/catdisplayer.js"></script>
+    <script src="js/views/adminpanel.js"></script>  
+    <script src="js/controller.js"></script>           
+    <script src="js/app.js"></script>
+</body>
+
+</html>

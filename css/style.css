@@ -1,0 +1,27 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.main-list {
+    width: 20%;
+    height: 100%;
+    float: left; 
+}
+
+.main-display {
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.admin {
+    width: 20%;
+    height: 100%;
+    float: right;
+}
+
+#admin-panel{
+    display: none;    
+}
