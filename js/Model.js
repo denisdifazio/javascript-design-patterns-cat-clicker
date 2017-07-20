@@ -10,7 +10,5 @@ var Model = function() {
      var cat_four = new Cat("Envy", "images/cat4.jpg");
      this.catList.push(cat_four);
      var cat_five = new Cat("Tedy", "images/cat5.jpg");
-     this.catList.push(cat_five);
-
-     this.currentCat = cat_one;
+     this.catList.push(cat_five);     
 };

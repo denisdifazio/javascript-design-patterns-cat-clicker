@@ -6,43 +6,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div id="cat-list" class="main-list">
+<body>    
+    <div class="cat-list">   
+        <h1>Cats</h1>
+        <ul data-bind="foreach: catList">
+            <li data-bind="text: name, click: $parent.setCurrentCat">
+            </li>
+        </ul>
     </div>
 
-    <div id="cat-display" class="main-display">
+    <div data-bind="with: currentCat" class="main-display">
         <div class="name">
-            <h1 data-bind="text: catName"></h1>
+            <h1 data-bind="text: name"></h1>
         </div>
         <div class="level">
-            <h1 data-bind="text: catLevel"></h1>
+            <h1 data-bind="text: level"></h1>
         </div>
         <div class="image">
-            <img data-bind="click: incrementCurrentCatCount, attr: {src: catImage}" src="" alt="">
+            <img data-bind="click: $parent.incrementCurrentCatCount, attr: {src: image}" src="" alt="">
         </div>
         <div class="counter">
-            <h1 data-bind="text: getCurrentCatCount"></h1>
+            <h1 data-bind="text: $parent.getCurrentCatCount"></h1>
         </div>
     </div>
 
     <div id="admin-collumn">
-        <button type="" id="admin-button" class="button">Admin</button>
+        <button type="" data-bind="click: showAdminPanel" class="button">Admin</button>
         <div id="admin-panel">
-            <form id="admin-form" class="admin-form">
-                Name: <input type="text" id="admin-name-input" class="name-input">
-                <br> Image: <input type="text" id="admin-image-input" class="image-input">
-                <br> Clicks: <input type="text" id="admin-clicks-input" class="clicks-input">
+            <form data-bind="with: currentCat" class="admin-form">
+                Name: <input type="text" data-bind="attr: {value: name}" id="cat-input-name" class="name-input">
+                <br> Image: <input type="text" data-bind="attr: {value: image}" id="cat-input-image" class="image-input">
+                <br> Clicks: <input type="text" data-bind="attr: {value: clickedCount}" id="cat-input-clicks" class="clicks-input">
             </form>
-            <button type="" id="admin-cancel-button" class="button">Cancel</button>
-            <button type="" id="admin-save-button" class="button">Save</button>
+            <button type="" data-bind="click: hideAdminPanel" class="button">Cancel</button>
+            <button type="" data-bind="click: saveModifiedCat" class="button">Save</button>
         </div>
     </div>
 
     <script src="js/knockout-3.4.2.js"></script>
     <script src="js/cat.js"></script>
     <script src="js/model.js"></script>
-    <script src="js/views/catlist.js"></script>
-    <script src="js/views/catdisplayer.js"></script>
     <script src="js/views/adminpanel.js"></script>  
     <script src="js/viewmodel.js"></script>           
 </body>
