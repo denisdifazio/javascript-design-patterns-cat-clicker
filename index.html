@@ -12,13 +12,16 @@
 
     <div id="cat-display" class="main-display">
         <div class="name">
-            <h1 data-bind="text: getCurrentCatName"></h1>
+            <h1 data-bind="text: catName"></h1>
+        </div>
+        <div class="level">
+            <h1 data-bind="text: catLevel"></h1>
         </div>
         <div class="image">
-            <img id="cat-image" src="" alt="">
+            <img data-bind="click: incrementCurrentCatCount, attr: {src: catImage}" src="" alt="">
         </div>
         <div class="counter">
-            <h1 id="cat-counter"></h1>
+            <h1 data-bind="text: getCurrentCatCount"></h1>
         </div>
     </div>
 

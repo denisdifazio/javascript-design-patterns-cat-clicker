@@ -1,11 +1,37 @@
-var ViewModel = function() {
+var ViewModel = function() {  
   this.model = new Model();
+  this.catName = ko.observable(this.model.currentCat.name);
+  this.clickCount = ko.observable(this.model.currentCat.clicked);
+  this.catImage = ko.observable(this.model.currentCat.image);
+  this.catLevel = ko.observable(this.model.currentCat.level);
   this.catList = new CatList();
   this.catDisplayer = new CatDisplayer();
   this.adminPanel = new AdminPanel();
 
-  this.getCurrentCatName = ko.pureComputed(function() {
-    return this.model.currentCat.name;
+  this.incrementCurrentCatCount = function() {
+    this.clickCount(this.clickCount() + 1); 
+    this.incrementCurrentCatLevel();
+  };
+
+  this.incrementCurrentCatLevel = function() {
+    switch(this.clickCount()) {
+      case 10:
+        this.catLevel("Amateur");
+        break;
+      case 25:
+        this.catLevel("Getting there");
+        break;
+      case 50:
+        this.catLevel("Catnight");
+        break;
+      case 100:
+        this.catLevel("God");
+        break;
+    };
+  };
+
+  this.getCurrentCatCount = ko.pureComputed(function() {
+    return "Clicked: " + this.clickCount();  
   }, this);
 
   this.init = function() {

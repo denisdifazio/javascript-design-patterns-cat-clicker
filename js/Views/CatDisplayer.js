@@ -1,10 +1,7 @@
 var CatDisplayer = function() {
-    this.catName = document.getElementById("cat-name");
-    this.catCounter = document.getElementById("cat-counter");
-    this.catImage = document.getElementById("cat-image");
-    this.catImage.addEventListener("click", function() {
-        controller.incrementCounter();
-      }, false);
+    //this.catName = document.getElementById("cat-name");
+    //this.catCounter = document.getElementById("cat-counter");
+    //this.catImage = document.getElementById("cat-image");
 };
 
 CatDisplayer.prototype.render = function(cat) {

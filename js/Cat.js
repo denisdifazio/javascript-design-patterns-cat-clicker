@@ -1,5 +1,6 @@
 var Cat = function(name, image) {
     this.name = name;
     this.image = image;
-    this.clickedCounter = 0;         
+    this.clicked = 0;    
+    this.level = "Newborn";     
 };
